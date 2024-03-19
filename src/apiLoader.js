@@ -1,9 +1,11 @@
 const axios = require("axios");
 const { Country } = require("./db");
 
+const apiUrl = process.env.API_URL
+
 const apiLoader = async () => {
   try {
-    const { data } = await axios.get("http://localhost:5000/countries");
+    const { data } = await axios.get(apiUrl);
     
     data.forEach(
       async ({
