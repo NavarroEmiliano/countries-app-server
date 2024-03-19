@@ -5,7 +5,7 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3001
 
 conn
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
     server.listen(PORT, async () => {
       await apiLoader()
